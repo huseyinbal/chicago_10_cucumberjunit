@@ -5,12 +5,12 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
-import pages.Wiki;
+import pages.WikiPage;
 import utilities.Driver;
 
 public class WikiSteps {
 
-    Wiki wpbjcet= new Wiki();
+    WikiPage wpbjcet= new WikiPage();
 
 
     @Given("User is on the Wikipedia homepage")

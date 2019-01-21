@@ -6,11 +6,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class Wiki {
+public class WikiPage {
 
     WebDriver driver;
 
-    public Wiki(){
+    public WikiPage(){
         driver= Driver.getDriver();
         PageFactory.initElements(driver, this);
 
