@@ -23,4 +23,8 @@ public class WikiPage {
     @FindBy(id="firstHeading")
     public WebElement firstHeader;
 }
-//this comment is to edit any file in remote repository let
+<<<<<<< HEAD
+//this comment is to edit any file in remote repository 
+=======
+//this comment is to edit any file in remote repository get
+>>>>>>> 1a549f71b1fb735a3ab482a19c44513aed1ea7c4
