@@ -14,6 +14,16 @@ public class CustomResponse {
     Contact contact;
     List<Instructor> instructors;
     List<Student> students;
+    private Company company;
+    private String jsonResponse;
+
+    public String getJsonResponse() {
+        return jsonResponse;
+    }
+
+    public void setJsonResponse(String jsonResponse) {
+        this.jsonResponse = jsonResponse;
+    }
 
     public Company getCompany() {
         return company;
@@ -23,7 +33,7 @@ public class CustomResponse {
         this.company = company;
     }
 
-    Company company;
+
 
     public List<Student> getStudents() {
         return students;

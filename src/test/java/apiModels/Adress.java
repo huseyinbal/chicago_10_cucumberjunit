@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_DEFAULT)
 public class Adress {
 
-    String city;
+    private String city;
 
     public String getCity() {
         return city;

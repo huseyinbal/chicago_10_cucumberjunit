@@ -13,6 +13,10 @@ public class APIRunner {
 
     private static CustomResponse cr;
 
+    public static CustomResponse getCr(){
+        return cr;
+    }
+
     public static void runGET(String uri){
         Response response=RestAssured.get(uri);
         System.out.println("STATUS: "+response.statusCode());
@@ -24,7 +28,7 @@ public class APIRunner {
             System.out.println("JSON Couldn't map properly");
         }
 
-
+        cr.setJsonResponse(response.asString());
     }
 
 
@@ -40,6 +44,7 @@ public class APIRunner {
             System.out.println("JSON Couldn't map properly");
         }
 
+        cr.setJsonResponse(response.asString());
     }
 
 
