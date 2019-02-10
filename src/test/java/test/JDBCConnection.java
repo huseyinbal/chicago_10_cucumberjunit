@@ -16,20 +16,41 @@ public class JDBCConnection {
 
 Connection connection= DriverManager.getConnection(oracleDbUrl,oracleDbUsername,oracleDbPassword);
 
-Statement statement=connection.createStatement();
+//Statement statement=connection.createStatement();
+Statement statement=connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 ResultSet resultSet=statement.executeQuery("select * from countries");
 
-resultSet.next();
+//resultSet.next();
+//
+//System.out.println(resultSet.getString("country_name"));
+//System.out.println(resultSet.getString(1));
+//System.out.println(resultSet.getString("region_id"));
 
-System.out.println(resultSet.getString("country_name"));
-System.out.println(resultSet.getString(1));
-System.out.println(resultSet.getString("region_id"));
 
-        resultSet.next();
-        System.out.println(resultSet.getString("country_name"));
-        System.out.println(resultSet.getString(1));
-        System.out.println(resultSet.getString("region_id"));
-resultSet.close();
+
+
+        while(resultSet.next()) {
+
+            System.out.println(resultSet.getString(1)+"-"+resultSet.getString("region_id")+"-"+(resultSet.getString("country_name")));
+
+
+        }
+
+        resultSet.first();
+        System.out.println(resultSet.getRow());
+
+        /**
+         * RESULTSET methods
+         *
+         * next()-> moves to next row
+         * getObject(colname/index)-> will get everything from that column (getString will get if it is only string)
+         * last()--> goes to last row
+         * getRow->gets current row number
+         * first()-->goes to first row
+         */
+
+
+        resultSet.close();
 statement.close();
 connection.close();
     }
